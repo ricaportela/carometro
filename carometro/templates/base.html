@@ -1,0 +1,77 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <!-- Required meta tags -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="{% static 'css/bootstrap.css' %}">
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+    <title>{% block title %}Copião para Estudios Fotograficos{% endblock %}</title>
+</head>
+
+<body>
+<div class="container-fluid">
+
+    <nav class="navbar navbar-expand-md navbar-light bg-light">
+
+        <a class="navbar-brand" href="#">Face-o-Matic</a>
+
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSite">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSite">
+
+            <ul class="navbar-nav ml-auto">
+
+                <li class="navbar-item">
+                    <a class="nav-link" href="#">Inicio</a>
+                </li>
+
+                  <li class="navbar-item">
+                    <a class="nav-link" href="{% url 'photos:list_photos' %}">Visualizar</a>
+                </li>
+
+                  <li class="navbar-item">
+                    <a class="nav-link" href="{% url 'photos:progress_bar_upload' %}">Upload</a>
+                </li>
+
+                <li class="navbar-item">
+                    <a class="nav-link" href="#">Contato</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="http://www.ricardoportela.com.br">ricardoportela.com.br</a>
+                </li>
+            </ul>
+
+        </div>
+
+    </nav>
+</div>
+
+<div class="container-fluid">
+
+    {% block content %}
+      {% endblock %}
+
+
+</div>
+    <script src="{% static 'js/jquery.min.js' %}"></script>
+    <script src="{% static 'js/bootstrap.min.js' %}"></script>
+{% block javascript %}
+  {# JQUERY FILE UPLOAD SCRIPTS #}
+  <script src="{% static 'js/jquery-file-upload/vendor/jquery.ui.widget.js' %}"></script>
+  <script src="{% static 'js/jquery-file-upload/jquery.iframe-transport.js' %}"></script>
+  <script src="{% static 'js/jquery-file-upload/jquery.fileupload.js' %}"></script>
+
+  {# PHOTOS PAGE SCRIPTS #}
+  <script src="{% static 'photos/js/basic-upload.js' %}"></script>
+{% endblock %}
+
+</body>
+</html>

@@ -1,0 +1,22 @@
+.thumbnail img {
+  height: 250px;
+  width: 100%; }
+
+.page-header {
+  margin-top: 0; }
+
+.container {
+  border: 1px;
+  padding: 3px; }
+
+.miniatura {
+  display: inline-block;
+  border: 1px solid black;
+  margin: 3px; }
+
+.foto img {
+  width: 100px; }
+
+.texto {
+  padding: 5px;
+  font-size: 12px; }
