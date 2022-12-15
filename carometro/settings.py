@@ -129,10 +129,10 @@ CLOUDINARY_STORAGE = {
 DATABASES = {
     "default": {
         "ENGINE": "django.db.backends.mysql",
-        "NAME": "djangodatabase",
-        "USER": "root",
-        "PASSWORD": "12345",
-        "HOST": "127.0.0.1",
+        "NAME": "carometro",
+        "USER": "ricaportela",
+        "PASSWORD": "Devops@2023@&",
+        "HOST": "ricaportela.mysql.pythonanywhere-services.com",
         "PORT": "3306",
         "OPTIONS": {"init_command": "SET sql_mode='STRICT_TRANS_TABLES'"},
     }
