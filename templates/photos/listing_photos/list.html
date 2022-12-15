@@ -1,0 +1,109 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load cloudinary %}
+<!--{% block title %}Matriz de Impressão{% endblock %}-->
+
+{% block javascript %}
+
+<style type="text/css">
+  .page-header {
+    margin-top: 0;
+  }
+
+      .container {
+        
+        border: 1px ;
+        padding: 3px;
+      }
+      .miniatura {
+        display: inline-block;
+        border: 1px solid black;
+        margin:3px;
+      }
+      .foto img {
+        width: 100px;
+        
+      }
+      .texto {
+        padding:5px;
+        font-size: 12px;
+      }
+
+
+
+</style>
+{% endblock %}
+
+{% block content %}
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-4">
+            <div>
+                <img class="img-fluid" src="{% static 'img/logotipo.jpeg' %}">
+            </div>
+            <div class="text-center">
+                <h5>
+                    Momentos Imagem
+                </h5>
+                <h6>
+                    Fotografias & Studio Escolar
+                </h6>
+            </div>
+            <div class="p-1 text-left" style="font-size: 11px;">
+                <small>Rua Mário Mendes de Lara, 64 - Uberaba - Curitiba - PR<br/>
+                    Telefones: 41 99906 9775 - 99703 9902 - </br>
+                    41 3376 2049<br/>
+                    email: momentosimagem@gmail.com<br/>
+                    redes sociais: facebook/momentos2017<br/>
+                    website: momentosimagem.com.br<br/>
+                </small>
+            </div>
+        </div>
+        <div class="col-md-8"
+        ">
+        <h2 class="text-center">
+            Queridos Responsaveis
+        </h2>
+        <p>
+            A infância é um tempo muito gracioso, cheio de carinho, amor e aprendizado. Pensado nisso, a
+            MOMENTOS IMAGENS registra com belas fotos esse período tão lindo.
+            Apresentamos as amostras destas fotos para que possam ser escolhidas as fotos de sua preferência.
+            Lembrando que podem ser escolhidas quantas fotos quiserem. Não há obrigatoriedade de pedido minimo.
+        <h6 class="text-center">
+            Anexo a este copião estão as instruções e preços para pedido.
+        </h6>
+        </p>
+    </div>
+</div>
+<div class="row p-2" style="font-weight: bold; ">
+    <div class="col-md-4 text-center">
+        Sofia Adral - Infantil - 2C
+    </div>
+    <div class="col-md-8 text-center">
+        CMEI A BAB DO PASSARINHO - S. J. PINHAIS - MAR/2017
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-12" style="min-height: 600px; border: 1px solid gray">
+        <div class="container">
+            {% for photo in photos %}
+            <div class="miniatura">
+                <div class="foto">
+                    {% cloudinary photo.image.name width=100 height=100 %}
+                </div>
+                <div class="texto">
+                    {{ photo.title }}
+                </div>
+            </div>
+            {% endfor %}
+
+        </div>
+
+    </div>
+</div>
+
+
+
+{% endblock %}

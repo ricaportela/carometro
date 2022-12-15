@@ -1,0 +1,16 @@
+<div style="margin-bottom: 20px;">
+  <button type="button" class="btn btn-primary js-upload-photos">
+    <span class="glyphicon glyphicon-cloud-upload"></span> Gerar PDF
+  </button>
+  <input id="fileupload" type="file" name="file" multiple style="display: none;" data-url="{% url 'photos:progress_bar_upload' %}"
+    data-form-data='{"csrfmiddlewaretoken": "{{ csrf_token }}"}'>
+</div>
+
+  <form method="post" action="{% url 'photos:clear_database' %}">
+    {% csrf_token %}
+    <input type="hidden" name="next" value="{{ request.path }}">
+    <button type="submit" class="btn btn-danger pull-right">
+      <span class="glyphicon glyphicon-trash"></span> Clear Database
+    </button>
+  </form>
+

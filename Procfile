@@ -1,0 +1,1 @@
+web: gunicorn carometro.wsgi --log-file -
